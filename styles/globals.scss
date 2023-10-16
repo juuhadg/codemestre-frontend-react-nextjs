@@ -1,0 +1,15 @@
+*{
+    font-size: 14px;
+  }
+  
+  html,body,#__next {
+    height: 100%;
+    margin: 0;
+  }
+
+@import '../components/home/home.scss';
+@import '../components/ListaConteudos/ListaConteudo.scss';
+@import '../components/csPage/cs.scss';
+@import '../components/CodeBox/prism-custom-theme.scss';
+@import '../components/CodeBox/code-box.scss';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap');

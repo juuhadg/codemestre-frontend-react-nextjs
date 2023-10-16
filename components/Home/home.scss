@@ -1,0 +1,79 @@
+body { background: #16171b;}
+header {
+    display: inline;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    h1 {
+       
+        font-size: 30px;
+        text-align: center;
+            
+    }
+    p{
+        text-align: center;
+    }
+}
+
+.primeiraLinguagemContainer {
+    background-color: #f7f6fb;
+    width: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Poppins';
+    margin: 0 auto;
+    h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+    h2 {
+        text-align: center;
+    }
+    .listaLinguagens {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding:2px;
+   
+       
+        a{
+            text-decoration: none;
+            font-family: 'Poppins';
+            padding-left: 20px;
+            
+            height: 80px;
+            text-align: center;
+                display: flex;
+                align-items: center;
+                background-color: #222326;
+                padding: 30px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                height: 50px;
+            
+            li {
+                list-style-type: none;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 30px;
+                width: 80%;
+                p{
+                    font-size: 50px;
+                    justify-content: right;
+                    text-decoration: none;
+                    color: white;
+                }
+                
+                
+           
+           
+            img {
+                width: 80px;
+                height: 80px;
+            }
+        }
+        
+    } 
+}
+}
+

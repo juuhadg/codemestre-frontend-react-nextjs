@@ -1,0 +1,30 @@
+*{font-family: 'Poppins';}
+
+.card {
+    width: 250px;
+    height: 290px;
+    border-radius: 15px;
+    background: rgb(27, 26, 26);
+    color: white;
+    font-weight: 600;
+    font-size: 1.2em;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  
+  }
+  
+  .element {
+    color: grey;
+    font-size: .8em;
+    padding: 6px 15px;
+    border-left: 2px solid grey;
+    cursor: pointer;
+  }
+  
+ 
+  
+  .element:hover {
+    color: #3775bb;
+  }

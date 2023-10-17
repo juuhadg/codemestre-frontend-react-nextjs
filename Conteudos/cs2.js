@@ -63,6 +63,7 @@ O objetivo é escrever a string " Hello World" pelo console da aplicação que e
                     static void Main()
                     {
                         Console.WriteLine("Hello World!");
+                        //resultado : Hello World!
                     }
                 }
             }
@@ -71,6 +72,23 @@ O objetivo é escrever a string " Hello World" pelo console da aplicação que e
         <h2> Importante : após Toda Linha de Código que acabar, que não seja uma função ou classe que tem as chaves após, PRECISA ADICIONAR ;</h2>
         <p>Também podemos fazer de outra forma, e se tivermos uma string salva, igual vimos no Módulo de Tipos de Dados ?</p>
         <p>Basta declarar dentro da função Main antes, e depois passar o nome da variável que você criou dentro do método do Console</p>
+        <h2>Podemos também juntar o aprendido antes e salvar nossa frase numa variável e a escrever em vez de escrever diretamente.</h2>
+        <CodeBox codigo={
+            `
+            namespace MeuPrograma
+            {
+                class Programa
+                {
+                    static void Main()
+                    {
+                        string frase = "Hello World!";
+                        Console.WriteLine(frase);
+                        //resultado : Hello World!
+                    }
+                }
+            }
+            `
+        }/>
         </>
     )
 }

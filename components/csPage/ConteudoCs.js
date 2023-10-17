@@ -1,6 +1,7 @@
 import React from 'react';
 import ConteudoCs1 from '@/Conteudos/cs1';
 import ConteudoCs2 from '@/Conteudos/cs2';
+import ConteudoCs3 from '@/Conteudos/cs3';
 
 
 function ConteudoCs({ assuntoSelecionado }) {
@@ -24,7 +25,7 @@ function ConteudoCs({ assuntoSelecionado }) {
       </>
       break;
     case 3:
-      conteudo = <div>Conteúdo do Assunto 3</div>;
+      conteudo = <ConteudoCs3/>
       break;
       case 4:
         conteudo = <div>Conteudo 4</div>;

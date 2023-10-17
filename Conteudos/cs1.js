@@ -14,7 +14,7 @@
             <li><strong>double</strong> - Significa um número com decimais (Ex: 1.2, 2.5, 10.234), lembrando que em programação os decimais são sempre separados por Ponto (.) e não Vírgula (,).</li>
         </ul>
         <p>Portanto, se você tentar armazenar, por exemplo, o número 2.5 como int, ele salvará como 2, pois não consegue trabalhar com esse tipo de número decimal. Então use corretamente. No caso de guardar um número inteiro como 2 na forma de double, ele irá guardar normalmente. Mas se você sabe que não irá utilizar números decimais, sempre use int, pois é a prática correta.</p>
-        <p>A forma que  Declaramos uma variável em C# na Sintaxe Basica é a seguinte : (tipo de dado que guardamos) + (o nome que queremos dar) = valor desejado</p>
+        <h2>A forma que  Declaramos uma variável em C# na Sintaxe Basica é a seguinte : <strong>(tipo de dado que guardamos) + (o nome que queremos dar) = valor desejado</strong></h2>
             <CodeBox
                 codigo={
                     `
@@ -27,7 +27,7 @@
 
             <li>Tipos para Textos
                 <ul>
-                    <li><strong>string</strong> - Significa um conjunto de caracteres que forma um texto ou palavra (Ex: "Ola, Mundo") , sempre entre aspas duplas. Atenção  string "2" é diferente de int 2 por exemplo. Em um código voce irá receber um erro se tentar fazer "2" + 1 por exemplo, por isso o tipo de dado é tão importante.</li>
+                    <li><strong>string</strong> - Significa um conjunto de caracteres que forma um texto ou palavra (Ex: "Ola, Mundo") , sempre entre aspas duplas. <strong>Atenção</strong>  string "2" é diferente de int 2 por exemplo. Em um código voce irá receber um erro se tentar fazer "2" + 1 por exemplo, por isso o tipo de dado é tão importante.</li>
                 </ul>
                 <ul>
                     <li><strong>char</strong> - Significa UM único caracter de texto, a string é basicamente um conjunto de vários chars.(Ex :  'x') e estes sempre são declarados com aspas únicas simples.</li>

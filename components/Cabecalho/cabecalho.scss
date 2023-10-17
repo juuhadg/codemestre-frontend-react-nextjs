@@ -1,0 +1,21 @@
+.cabecalhoContainer {
+    background-color: black;
+    width: 100%;
+    position: fixed;
+    z-index: 2  ;
+    border-bottom: 2px solid #3bd423;
+    display: flex;
+    justify-content: center;
+    top: 0;
+    .imgContainer {
+        display: flex;
+        align-items: center;
+        img {
+        width: 150px;
+        height: 94px;
+        margin: auto;
+        display: block;
+    }
+    }
+    
+}

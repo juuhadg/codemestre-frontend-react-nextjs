@@ -1,79 +1,126 @@
-body { background: $cinzaEscuro;}
-header {
-    display: inline;
-    font-family: 'Poppins', sans-serif;
-    color: $branco;
-    h1 {
-       
-        font-size: 30px;
-        text-align: center;
-            
-    }
-    p{
-        text-align: center;
-    }
-}
+body {
+    background: url('../../public/fundo-ninja-final.jpg');
+     background-size: cover;
+     background-attachment: fixed;
+     margin-top: 150px;
+  }
+  
 
-.primeiraLinguagemContainer {
-    background-color: #f7f6fb;
-    width: fit-content;
-    padding: 10px;
-    border-radius: 10px;
-    font-family: 'Poppins';
-    margin: 0 auto;
-    h1 {
+
+   
+  
+  
+    .cardDeCima {
+      margin-bottom: 120px;
+  
+      h1 {
+        color: $verde;
+        font-size: 50px;
+        text-align: center;
+      }
+  
+      p {
+        color: $branco;
+        text-align: center;
+        font-size: 20px;
+      }
+  
+      h2 {
+        color: $branco;
+        text-align: center;
+        font-size: 40px;
+      }
+    }
+  
+    .cardInformacoes {
+      margin-left: 150px;
+      border: 2px solid $verde;
+      width: fit-content;
+      padding: 15px 18px;
+      border-radius: 12px;
+      height: fit-content;
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+  
+        
+
+      h2 {
+        color: $azul;
         font-size: 20px;
         text-align: center;
-    }
-    h2 {
+      }
+  
+      li {
+        color: $branco;
+        font-size: 20px;
+      }
+      button {
+        background-color: transparent;
+        outline: none;
+        color: $verde;
+        border: 1px solid $verde;
+        border-radius: 15px;
+        padding: 15px;
+        width: 70%;
         text-align: center;
+        margin: 0 auto;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $verde;
+            color: $branco;
+        }
+
+      }
     }
-    .listaLinguagens {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding:2px;
-   
-       
-        a{
-            text-decoration: none;
-            font-family: 'Poppins';
-            padding-left: 20px;
-            
-            height: 80px;
+  
+        .cardInformacoes2 {
+            display: flex;
+            margin: 0 auto;
             text-align: center;
+            justify-content: space-evenly;
+            flex-direction: column;
+            width: fit-content;
+            margin-bottom: 50px;
+            margin-top: 50px;
+
+              
+           
+            h1 {
+                color: $branco;
+                font-size: 30px;
+            }
+            h2 {
+                color: $verde;
+                font-size: 20px
+                
+            }
+
+            .comoFuncionaBox {
                 display: flex;
-                align-items: center;
-                background-color: #222326;
-                padding: 30px;
-                border-radius: 10px;
-                margin-bottom: 10px;
-                height: 50px;
-            
-            li {
-                list-style-type: none;
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                gap: 30px;
-                width: 80%;
-                p{
-                    font-size: 50px;
-                    justify-content: right;
-                    text-decoration: none;
-                    color: white;
+                gap: 25px;
+
+                .item {
+                    padding: 50px;
+                    border: 2px solid $verde;
+                    border-radius: 12px;
+                    width: 30%;
+                    h2{
+                        color: $verde;
+                        font-size: 20px;
+                        }
+                    img {
+                        width: 150px;
+                        height: 150px;
+                    }
+                    p{
+                        color: $branco;
+                    }
                 }
-                
-                
-           
-           
-            img {
-                width: 80px;
-                height: 80px;
+                    margin-bottom: 50px;
             }
         }
-        
-    } 
-}
-}
-
+  
+  
+  

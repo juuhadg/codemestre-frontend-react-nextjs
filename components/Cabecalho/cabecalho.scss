@@ -1,38 +1,42 @@
-.cabecalhoContainer {
-    background-color: $preto;
-    width: 100%;
-    position: fixed;
-    z-index: 2  ;
-    border-bottom: 2px solid $verde;
-    display: flex;
-    justify-content: center;
-    top: 0;
-    align-items: center;
-    height: fit-content;
-    .imgContainer {
-        display: flex;
-        align-items: center;
-        text-align: center;
-        img {
-        width: 150px;
-        height: 94px;
-        margin: auto;
-        display: block;
-    }
-    }
-    
-    .cabecalhoUsuarioContainer {
-  
-  position: absolute;
-   right: 3%;
-   top: 50%;
-   height: auto;
-   transform: translate(-3%, -50%);
-   
-   
-    
- }
 
+header {
+    color: $branco;
 }
+  .cabecalhoContainer {
+      background-color: $preto;
+      width: 100%;
+      position: fixed;
+      z-index: 2  ;
+      border-bottom: 2px solid $verde;
+      display: flex;
+      justify-content: center;
+      top: 0;
+      align-items: center;
+      height: fit-content;
+      .imgContainer {
+          display: flex;
+          align-items: center;
+          text-align: center;
+          img {
+          width: 150px;
+          height: 94px;
+          margin: auto;
+          display: block;
+      }
+      }
+      
+      .cabecalhoUsuarioContainer {
+    
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    height: auto;
+    transform: translate(-3%, -50%);
+    
+    
+      
+  }
+
+  }
 
 

@@ -12,7 +12,7 @@
         max-width: 20%;
         display: flex;
         flex-direction: column;
-        background: #19191b;
+        background: $cinzaMedio;
         height: 100%;
        margin-top: 100px;
         position: fixed;
@@ -21,7 +21,7 @@
     
     .conteudoContainer {
        
-        color: white;
+        color: $branco;
         width:80%;
        padding-left: 20%;
         justify-content: center;
@@ -32,7 +32,7 @@
 
         .conteudo {
             width: 80%;
-            background:#121212 ;
+            background: $cinzaEscuro ;
             border-radius: 7px;
             display: flex;
             flex-direction: column;
@@ -44,15 +44,15 @@
                 font-size: 20px;
                 text-align: center;
                 margin-top: 15px;
-                color: #3bd423                
+                color: $verde                
             }
 
             strong {
-                color: #3bd423
+                color: $verde
             }
 
             h2 {
-                color: #25cbd3;
+                color: $azul;
             }
             @import 'prismjs/themes/prism-solarizeddark.css';
         }

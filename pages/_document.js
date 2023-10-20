@@ -10,7 +10,7 @@ export default function Document() {
             rel="icon"
             href="/favicon.ico" 
           />
-          <title>CodeMestre</title>
+          
         </Head>
       <body>
         <Cabecalho/>

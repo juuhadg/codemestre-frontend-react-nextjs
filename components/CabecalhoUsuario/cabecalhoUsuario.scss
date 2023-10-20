@@ -1,0 +1,63 @@
+.cabecalhoUsuarioContainer {
+    display: flex;
+    
+    
+    .informacoesUsuario {
+       
+        border-radius: 10px;
+        display: flex;
+         gap: 20px;
+         padding: 7px 10px;
+         align-items: center;
+        
+         
+            img {
+            border-radius: 30px;
+            width: 50px;
+            height: 50px;
+            border: 2px solid $verde;
+            }
+
+            .textos {
+                progress {
+                    background-color: $cinzaEscuro;
+                    border: 2px solid $verde;
+                    
+                }
+    
+                progress::-webkit-progress-value {
+                    background: $verde;
+                }
+                
+                progress::-moz-progress-bar {
+                    background: $verde; /* Cor do preenchimento da barra de progresso (Mozilla) */
+                }
+                p {
+                    margin: 1px;
+                }
+    
+            }
+
+            
+          
+           
+        
+    }
+
+
+    .deslogado {
+        display: flex;
+        align-items: center;
+        
+        button {
+        color: $verde;
+        background-color: $cinzaEscuro;
+        outline: none;
+        border: 1px solid $verde;
+        border-radius: 15px;
+        padding: 10px 20px;
+        
+    }
+    }
+    
+}

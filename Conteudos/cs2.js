@@ -1,4 +1,5 @@
 import CodeBox from "@/components/CodeBox/CodeBox";
+import InputCodigo from "@/components/InputCodigo/InputCodigo";
 
 export default function ConteudoCs2() {
     return (
@@ -53,9 +54,10 @@ O objetivo é escrever a string " Hello World" pelo console da aplicação que e
         <p>Após isso vem o tipo de dado que retornamos, no caso como não retornaremos nada na função Main, declaramos o tipo como void (vazio).</p>
         <p>Finalmente, Após tudo isso e o nome da função, adicionamos os parentêses () aonde podemos ou não passar algo chamado argumento dentro que basicamente é a informação que a função usará. Isso será importante pois usaremos isso para escrever nosso Hello World.</p>
         <h2>Finalmente, com toda essa explicação podemos montar nosso primeiro código que será o Hello World.</h2>
-        <p>O C# possui uma função nativa dele que é a Console , o Console possui vários métodos, o que usamos para escrever uma mensagem é o Console.WriteLine(). Daí é só colocar dentro dos parentêses () o que queremos escrever !</p>
+        <p>O C# possui uma função nativa dele que é a Console , o Console possui vários métodos, Primeiramente vamos adicionar a biblioteca System do C# no nosso código pois é la que a função Console fica, depois disso o que usamos para escrever uma mensagem é o Console.WriteLine(). Daí é só colocar dentro dos parentêses () o que queremos escrever !</p>
         <CodeBox codigo={
-            `   
+            `  
+            using System;
             namespace MeuPrograma
             {
                 class Programa
@@ -89,6 +91,8 @@ O objetivo é escrever a string " Hello World" pelo console da aplicação que e
             }
             `
         }/>
+        <h2>Agora uma missao digite aqui</h2>
+        <InputCodigo lingugagem={'csharp'}/>
         </>
     )
 }

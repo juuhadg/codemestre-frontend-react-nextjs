@@ -31,50 +31,60 @@ body {
         font-size: 40px;
       }
     }
-  
-    .cardInformacoes {
-      margin-left: 150px;
-      border: 2px solid $verde;
-      width: fit-content;
-      padding: 15px 18px;
-      border-radius: 12px;
-      height: fit-content;
-      display: inline-flex;
-      flex-direction: column;
-      justify-content: center;
-  
-        
 
-      h2 {
-        color: $azul;
-        font-size: 20px;
-        text-align: center;
-      }
-  
-      li {
-        color: $branco;
-        font-size: 20px;
-      }
-      button {
-        background-color: transparent;
-        outline: none;
-        color: $verde;
-        border: 1px solid $verde;
-        border-radius: 15px;
-        padding: 15px;
-        width: 70%;
-        text-align: center;
-        margin: 0 auto;
-        cursor: pointer;
+        .cardImagem {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            .cardInformacoes {
+            p{color: $branco;text-align: center;}
+                border: 2px solid $verde;
+                width: fit-content;
+                padding: 15px 18px;
+                border-radius: 12px;
+                height: 400px;
+                display: inline-flex;
+                flex-direction: column;
+                justify-content: center;
+            
+                  
+          
+                h2 {
+                  color: $azul;
+                  font-size: 20px;
+                  text-align: center;
+                }
+            
+                li {
+                  color: $branco;
+                  font-size: 20px;
+                }
+                button {
+                  background-color: transparent;
+                  outline: none;
+                  color: $verde;
+                  border: 1px solid $verde;
+                  border-radius: 15px;
+                  padding: 15px;
+                  width: 70%;
+                  text-align: center;
+                  margin: 0 auto;
+                  cursor: pointer;
+          
+                  &:hover {
+                      background-color: $verde;
+                      color: $branco;
+                  }
+          
+                }
+              }
+            
+           
 
-        &:hover {
-            background-color: $verde;
-            color: $branco;
         }
-
-      }
-    }
   
+    
+
         .cardInformacoes2 {
             display: flex;
             margin: 0 auto;

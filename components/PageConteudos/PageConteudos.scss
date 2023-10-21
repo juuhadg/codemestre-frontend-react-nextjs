@@ -36,11 +36,66 @@
     }
 }
 
-
+h1.titulo2 {
+    color: $verde;
+    font-size: 30px;
+    text-align: center;
+    margin-top: 60px;
+}
 .CardsIniciais {
-    .cardContainer {
+  
+  
+        display: flex;
+        gap: 15px;
+        margin: 0 auto;
+        justify-content: center;
         h1{
             font-size: 30px;
+            
         }
+        .cardbox {
+            border: 1px solid $verde;
+            border-radius: 12px;
+            padding: 35px 20px;
+            width: 20%;
+
+            .cardboxTitulo {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            h2 {
+                color: $verde;
+                font-size: 20px;
+            }
+            li {
+                color: $verde;
+                strong {
+
+                    font-size: 17px;
+                }
+            }
+            
+            .botao{
+                display: flex;
+                align-items: center;
+                padding: 0px;
+                justify-content: center;
+                width: 100%;
+                button {
+                
+                    background-color: $azul;
+                    border:  none;
+                    border-radius: 15px;
+                    padding: 30px;
+                    font-size: 20px;
+                    color: $branco;
+                    width: 100%;
+                }
+            }
+          
+
+        
     }
 }

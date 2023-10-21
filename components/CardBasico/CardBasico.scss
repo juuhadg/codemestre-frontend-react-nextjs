@@ -1,0 +1,18 @@
+.cardContainer {
+    p{
+        color: $branco;text-align: center;
+    }
+    h1 {
+        color: $verde;
+    }
+                border: 2px solid $verde;
+                width: fit-content;
+                padding: 15px 18px;
+                border-radius: 12px;
+                min-height: 400px;
+                height: fit-content;
+                display: inline-flex;
+                flex-direction: column;
+                justify-content: center;
+            
+}

@@ -41,7 +41,7 @@ export default function Home() {
             <li>Acompanhe Seu Progresso em Cada Linguagem</li>
             <li>Jornada Completa de Novato a Mestre</li>
           </ul>
-         <h2> Junte-se á Jornada</h2>
+         <h2> Junte-se à Jornada</h2>
         </div>
         
         </section>
@@ -51,17 +51,17 @@ export default function Home() {
               <h1>Como é A Jornada?</h1>
               <div className="comoFuncionaBox">
                 <div className='item'>
-                  <Image src={iconPergaminho}/>
+                  <Image src={iconPergaminho} alt='iconPergaminho'/>
                   <h2>Aprendizagem</h2>
                   <p>Explore recursos de aprendizagem que o levarão pelo caminho para dominar<br></br> as habilidades que apenas os mestres ninja da programação possuem.</p>
                   </div>
                 <div className='item'>
-                  <Image src={iconNinja}/>
+                  <Image src={iconNinja} alt='iconNinja'/>
                   <h2>Treinamento</h2>
                   <p>Aprimore suas habilidades com exercícios práticos desafiadores.<br></br> A prática constante é o segredo para alcançar a maestria.</p>
                 </div>  
                 <div className='item'>
-                  <Image src={iconMestre}/>
+                  <Image src={iconMestre} alt='iconMestreNinja'/>
                   <h2>Evolução</h2>
                   <p>Suba seu Nível de Habilidade a cada treinamento,<br></br> torne-se um Mestre nas suas linguagens preferidas.</p>
                   <p>A Jornada para chegar ao topo não é fácil.<br></br> somente a dedicação cria verdadeiros Mestres Lendários.</p>

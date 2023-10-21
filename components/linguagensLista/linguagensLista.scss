@@ -1,0 +1,11 @@
+.linguagensListaContainer {
+    background-color: $preto;
+    border: 1px solid $verde;
+    border-radius: 12px;
+    padding: 20px 10px;
+    position: absolute;
+    z-index: 1;
+    left: 2%;
+    top:1%;
+    transform: translate(50%, 40%);
+}

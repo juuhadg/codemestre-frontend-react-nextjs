@@ -1,0 +1,25 @@
+.navContainer {
+    
+    
+    display: flex;
+    gap: 40px;
+    .conteudoNav {
+        padding-left: 30px;
+        display: flex;
+        p {
+            color: $verde;
+            font-size: 15px;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 12px;
+            &:hover {
+                background-color: $cinzaEscuro;
+            }
+        
+        }
+    }
+   
+
+
+   
+}

@@ -1,0 +1,46 @@
+.primeiraVezContainer {
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+    width: fit-content;
+    border: 2px solid $verde;
+    border-radius: 12px;
+    padding: 10px 20px;
+    h1 {
+        color: $azul;
+        font-size: 20px;
+    }
+    p {
+        color: $branco;
+        margin: 0px 5px;
+    }
+    strong {
+        color: $verde;
+        &.strongAzul {
+            color: $azul;
+        }
+    }
+    button {
+        border: 3px solid $azul;
+        background-color: transparent;
+        color: $azul;
+        padding: 20px 50px;
+        border-radius: 15px;
+        margin-top: 10px;
+        font-size: 20px;
+        cursor: pointer;
+        &:hover {
+            background-color: $azul;
+            color: $branco;
+        }
+    }
+}
+
+
+.CardsIniciais {
+    .cardContainer {
+        h1{
+            font-size: 30px;
+        }
+    }
+}

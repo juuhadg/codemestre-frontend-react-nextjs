@@ -4,34 +4,39 @@ header {
 }
   .cabecalhoContainer {
       background-color: $preto;
-      width: 100%;
+      width:100vw;
+   
       position: fixed;
       z-index: 2  ;
       border-bottom: 2px solid $verde;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       top: 0;
       align-items: center;
       height: fit-content;
+      > div {flex: 1;}
+
       .imgContainer {
           display: flex;
+          flex-grow: 1;
           align-items: center;
           text-align: center;
+          
+          a {
+            margin: auto;
+            display: block;
+          }
           img {
           width: 150px;
           height: 94px;
-          margin: auto;
-          display: block;
+          
       }
       }
       
       .cabecalhoUsuarioContainer {
-    
-    position: absolute;
-    right: 3%;
-    top: 50%;
+        flex-grow: 1;
     height: auto;
-    transform: translate(-3%, -50%);
+   
     
     
       

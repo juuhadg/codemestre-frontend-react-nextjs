@@ -13,7 +13,7 @@ export default function Document() {
           
         </Head>
       <body>
-        <Cabecalho/>
+       
         <Main />
         <NextScript />
       </body>

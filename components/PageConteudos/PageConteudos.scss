@@ -84,14 +84,18 @@ h1.titulo2 {
                 justify-content: center;
                 width: 100%;
                 button {
-                
-                    background-color: $azul;
-                    border:  none;
+                    cursor: pointer;
+                    background-color: transparent;
+                    border:  3px solid $azul;
                     border-radius: 15px;
                     padding: 30px;
                     font-size: 20px;
-                    color: $branco;
+                    color: $azul;
                     width: 100%;
+                    &:hover {
+                        background-color: $azul;
+                        color: $branco;
+                    }
                 }
             }
           

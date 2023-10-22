@@ -1,10 +1,15 @@
-import CardBasico from "../CardBasico/CardBasico";
+
 import Image from 'next/image'
 import pythonIcon from '../../public/pythonIcon.svg'
 import javascriptIcon from '../../public/javascriptIcon.svg'
 import csharpIcon from '../../public/csharpIcon.svg'
+import { useRouter } from 'next/router'
 
 export default function PageConteudos() {
+    const router = useRouter()
+    const aoClicarLink = (url) => {
+        router.push(`/${url}`)
+    }
     return (
         <>
         <div className="primeiraVezContainer">
@@ -29,7 +34,7 @@ export default function PageConteudos() {
                     <li> <strong>Muito Boa para Dados e Machine Learning</strong> </li>
                 </ul>
                 <section className="botao">
-                    <button>Comece Aprender Pyton</button>
+                    <button onClick={()=>aoClicarLink('/python')}>Comece Aprender Pyton</button>
                  </section>
             </div>
             <div className="cardbox">
@@ -44,7 +49,7 @@ export default function PageConteudos() {
                     <li> <strong>Linguagem ótima para começar FullStack</strong> </li>
                 </ul>
                 <section className="botao">
-                    <button>Comece Aprender JavaScript</button>
+                    <button onClick={()=>aoClicarLink('/javascript')}>Comece Aprender JavaScript</button>
                  </section>
 
                 
@@ -61,7 +66,7 @@ export default function PageConteudos() {
                     <li> <strong>Linguagem ótima para Backend</strong> </li>
                 </ul>
                 <section className="botao">
-                    <button>Comece Aprender C#</button>
+                    <button onClick={()=>aoClicarLink('/csharp')}>Comece Aprender C#</button>
                  </section>
             </div>
         </div>

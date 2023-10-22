@@ -11,13 +11,6 @@ function ConteudoCs({ assuntoSelecionado }) {
     case 1:
       conteudo =  <ConteudoCs1/>
             
-   
-
-            
-            
-            
-            
-     
       break;
     case 2:
       conteudo = <>

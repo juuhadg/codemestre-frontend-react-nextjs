@@ -1,8 +1,11 @@
 import Image from "next/image";
 import logo from '../../public/CodeMestreIcon.png';
+import { useRouter } from 'next/router'
+
 
 export default function  CabecalhoUsuario() {
-    const estaLogado = true
+    const estaLogado = false
+    const router = useRouter()
     return (
         <>
         <div className="cabecalhoUsuarioContainer">
@@ -21,7 +24,7 @@ export default function  CabecalhoUsuario() {
                     ): (
                         <div className="deslogado">
 
-                            <button>Entrar</button>
+                            <button onClick={()=>{router.push('/login')}}>Entrar</button>
                             </div>
                     )
                     

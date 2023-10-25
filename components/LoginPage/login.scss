@@ -1,0 +1,70 @@
+body.login {
+     background-size: cover;
+     background-attachment: fixed;
+     margin-top: 0px;
+     
+  }
+  .paginaLogin {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: flex-end;
+    padding: 0px 32px;
+
+
+    .loginContainer {
+        border: 1px solid $verde;
+        width: fit-content;
+       
+        padding: 30px;
+        border-radius: 12px;
+        margin-right: 12%;
+        margin-top: 8%;
+        text-align: center;
+
+        h1 {
+            color: $branco;
+            font-size: 22px;
+            margin-bottom: 25px;
+        }
+
+        form {
+          
+            border-radius: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 20px;
+            padding: 20px;
+
+            label {
+                color: $branco;
+                font-size: 15px;
+                margin-right: 10px;
+            }
+
+            input {
+                outline: none;
+               background-color: transparent;
+               border: none;
+               border-bottom: 1px solid $verde;
+               color:$verde;
+               text-align: center;
+
+            }
+            button {
+                width: 70%;
+                background-color: $verde;
+                color: $branco;
+                padding: 20px;
+                font-size: 15px;
+                border-radius: 14px;
+                outline: none;
+                border: none;
+            }
+        }
+        
+    }
+
+  }

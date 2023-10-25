@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }) {
     <Head>
     <title>CodeMestre</title>
     </Head>
-    <Cabecalho/>
+     {(router.asPath != '/login' && router.asPath != '/cadastro') && (<Cabecalho/>)}
   <Component {...pageProps} />
   </>
 )}

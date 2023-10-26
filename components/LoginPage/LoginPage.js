@@ -54,7 +54,10 @@ export default function LoginPage() {
     auto_select={false}
     useOneTap={false}
     width={500}
+
   onSuccess={credentialResponse => {
+    const objetoString = JSON.stringify(credentialResponse, null, 2)
+    console.log(objetoString)
     var credencialResposta = jwtDecode(credentialResponse.credential)
     console.log(credencialResposta)
   }}

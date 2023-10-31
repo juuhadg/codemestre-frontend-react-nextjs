@@ -1,7 +1,9 @@
-import { useState,useEffect } from "react"
-import { GoogleLogin } from '@react-oauth/google'
-import jwtDecode from "jwt-decode"
-import LoginForm from "./loginForm"
+import { useState,useEffect } from "react";
+import { GoogleLogin } from '@react-oauth/google';
+import jwtDecode from "jwt-decode";
+import LoginForm from "./loginForm";
+import { useRouter } from 'next/router'
+
 
 
 
@@ -9,7 +11,8 @@ export default function LoginPage() {
     const [nome,setNome] = useState('')
     const [email,setEmail] = useState('')
     const [senha,setSenha] = useState('')
-
+  
+    const router = useRouter()
 
     useEffect(() => {
        
@@ -29,9 +32,8 @@ export default function LoginPage() {
         
        <div className="paginaLogin">
         <div className="loginContainer">
-            <h1>Faça Seu Login !</h1>
+           
                 <LoginForm/>
-         <h1>Ou</h1>
          <h2>Entrar com Google</h2>
          <div className="botaoGoogle">
          <GoogleLogin
@@ -55,7 +57,7 @@ export default function LoginPage() {
   }}
 
 />;</div>
-<div><p>Ainda não tem uma conta? <strong>Cadastre-se</strong></p></div>
+<div><p>Ainda não tem uma conta? <strong onClick={()=> router.push('/cadastro')}>Cadastre-se</strong></p></div>
          </div>
          </div>
        

@@ -18,7 +18,7 @@ body.login {
         padding: 30px;
         border-radius: 12px;
         text-align: center;
-        margin-top: 100px;
+        margin-top: 10px;
 
         h1 {
             color: $branco;
@@ -31,6 +31,9 @@ body.login {
         }
         strong {
             color: $verde;
+            font-size: 15px;
+            margin-left: 3px;
+            cursor: pointer;
         }
 
         form {

@@ -1,6 +1,7 @@
 import { useState,useEffect } from "react"
 import { GoogleLogin } from '@react-oauth/google'
 import jwtDecode from "jwt-decode"
+import LoginForm from "./loginForm"
 
 
 
@@ -29,21 +30,7 @@ export default function LoginPage() {
        <div className="paginaLogin">
         <div className="loginContainer">
             <h1>Faça Seu Login !</h1>
-                <form onSubmit={()=>{console.log('enviado form')}}>
-                   
-                        <label>Nome : </label>
-                        <input  className = 'inputLogin' type="text" placeholder="Nome" value={nome} onChange={e=>{setNome(e.target.value)}}/>
-                   
-                 
-                        <label>E-mail : </label>
-                        <input  className = 'inputLogin' type="text" placeholder="Email" value={email} onChange={e=>{setEmail(e.target.value)}}/>
-                  
-                  
-                        <label>Senha : </label>
-                        <input  className = 'inputLogin' type="password" placeholder="Senha" value={senha} onChange={e=>{setSenha(e.target.value)}}/> 
-
-                    <button className="botaoEnviar" type="submit">Enviar</button>
-                </form>
+                <LoginForm/>
          <h1>Ou</h1>
          <h2>Entrar com Google</h2>
          <div className="botaoGoogle">
@@ -68,6 +55,7 @@ export default function LoginPage() {
   }}
 
 />;</div>
+<div><p>Ainda não tem uma conta? <strong>Cadastre-se</strong></p></div>
          </div>
          </div>
        

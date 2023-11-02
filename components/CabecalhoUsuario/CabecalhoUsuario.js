@@ -1,23 +1,47 @@
 import Image from "next/image";
 import logo from '../../public/CodeMestreIcon.png';
 import { useRouter } from 'next/router'
-
-
-export default function  CabecalhoUsuario() {
-    const estaLogado = false
+import UsuarioService from "@/services/UsuarioService";
+import { useEffect } from "react";
+import { useState } from "react";
+export default function  CabecalhoUsuario(estaLogado) {
     const router = useRouter()
+    const usuarioService = new UsuarioService();
+    const [usuario,setUsuario] = useState('')
+   async function obterUsuario() {
+    
+        
+    }
+   
+
+
+
+   
+        useEffect( () => {
+            async function getUsuario() {
+            const usuarioData = await usuarioService.obterUsuario();
+            const user = usuarioData.data
+            setUsuario(user)
+            
+    }
+       
+            getUsuario();
+        }, []); 
+        
+       
+        
     return (
         <>
         <div className="cabecalhoUsuarioContainer">
            
                     {estaLogado ? (
                         <div className="informacoesUsuario">
-                            <Image src={logo} className="avatar"/>
-                                <strong>juuhadg</strong>
+                            <img src={usuario.avatar} className="avatar" alt="avatar do usuario"/>
+                                <strong>{usuario.nome}</strong>
                             <div className="textos">
-                            <p>Nível 5</p>
-                                <progress value="200" max="500"></progress>
-                                <p>200xp / 500xp</p>
+                            <p>Nível {usuario.level}</p>
+                                <progress value={usuario.xp} max="500"></progress>
+                                <p>{usuario.xp}xp / 500xp</p>
                              </div>
                             
                         </div>
@@ -34,5 +58,4 @@ export default function  CabecalhoUsuario() {
             
         </div>
         </>
-    )
-}
+    )}

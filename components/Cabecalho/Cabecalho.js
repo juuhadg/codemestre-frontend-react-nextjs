@@ -2,7 +2,7 @@ import Image from "next/image";
 import logo from '../../public/CodeMestreLogo.png';
 import CabecalhoUsuario from "../CabecalhoUsuario/CabecalhoUsuario";
 import CabecalhoNav from "../CabecalhoNav/Cabecalhonav";
-export default function Cabecalho() {
+export default function Cabecalho(estaLogado) {
     
     
 
@@ -15,7 +15,7 @@ export default function Cabecalho() {
                     <Image src={logo}/>
                 </a>
             </div>
-           <CabecalhoUsuario/>
+           <CabecalhoUsuario estaLogado={estaLogado}/>
         </header>
         
         </>

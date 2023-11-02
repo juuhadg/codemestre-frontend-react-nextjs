@@ -3,15 +3,16 @@ import { GoogleLogin } from '@react-oauth/google';
 import jwtDecode from "jwt-decode";
 import LoginForm from "./loginForm";
 import { useRouter } from 'next/router'
+import UsuarioService from "@/services/UsuarioService";
 
 
-
+  
 
 export default function LoginPage() {
-    const [nome,setNome] = useState('')
-    const [email,setEmail] = useState('')
-    const [senha,setSenha] = useState('')
-  
+
+
+    const usuarioService = new UsuarioService();
+
     const router = useRouter()
 
     useEffect(() => {
@@ -44,11 +45,16 @@ export default function LoginPage() {
     useOneTap={false}
     width={500}
 
-  onSuccess={credentialResponse => {
-    const objetoString = JSON.stringify(credentialResponse, null, 2)
-    console.log(objetoString)
-    var credencialResposta = jwtDecode(credentialResponse.credential)
-    console.log(credencialResposta)
+  onSuccess={async credentialResponse => {
+    var credencialResposta = credentialResponse.credential
+    try{
+      await usuarioService.loginGoogle({tokenGoogle :credencialResposta})
+      router.push('/')
+
+    }catch(error) {
+      console.log(error)
+    }
+    
   }}
 
 

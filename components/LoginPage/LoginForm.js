@@ -2,26 +2,36 @@ import UsuarioService from "@/services/UsuarioService";
 import { useState } from "react";
 import { useRouter } from "next/router";
 const usuarioService = new UsuarioService();
+import validadores from "@/functions/validadores";
 
 export default function LoginForm() {
   const [email,setEmail] = useState("") ;
   const [senha,setSenha] = useState("") ;
   const [estaSubmetendo,setEstaSubmetendo] = useState(false) ;
   const router = useRouter()
+
   const aoSubmeter = async (e) => {
+   
     e.preventDefault();
     setEstaSubmetendo(true);
+    var dados = {email:email,senha:senha}
+    const validado = validadores(dados)
+    console.log('senhaValida : ' + validado.senhaValida)
+    console.log('emailValido : ' + validado.emaiValido)
+    if(validado.emaiValido === false) {return;}
+    if(validado.senhaValida === false) {return;}
     try {
      await usuarioService.login({
         login: email,
         senha: senha
       })
       
-      router.push('/')
+     router.push('/')
       
      
     } catch(error) {
-      console.log(error)
+      alert(error.response.data)
+      setEstaSubmetendo(false);
     }
     setEstaSubmetendo(false);
   }

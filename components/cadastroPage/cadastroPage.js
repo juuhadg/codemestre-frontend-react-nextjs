@@ -6,13 +6,22 @@ import { useEffect } from "react";
 import jwtDecode from "jwt-decode";
 import { useRouter } from "next/router";
 import UsuarioService from "@/services/UsuarioService";
+import validadores from "@/functions/validadores";
+
+
+
+
+
 export default function CadastroPage() {
+
+
     const router = useRouter()
 const [imagem, setImagem] = useState(null);
 const [nome, setNome] = useState("");
 const [email, setEmail] = useState("");
 const [senha, setSenha] = useState("");
 const [confirmacaoSenha, setconfirmacaoSenha] = useState("");
+const [estaSubmetendo, setEstaSubmetendo] = useState(false);
 const usuarioService = new UsuarioService();
 
 useEffect(() => {
@@ -27,8 +36,22 @@ useEffect(() => {
   }, []); 
 
   const aoSubmeter = async (e) => {
-
+      
    e.preventDefault();
+   setEstaSubmetendo(true)
+
+   let dados = {
+    email:email,
+    senha:senha,
+    confirmarSenha: confirmacaoSenha
+   }
+
+   var result = validadores(dados)
+
+   if((result.senhaValida || result.confirmarSenhaValida || result.emaiValido) === false) {
+    return;
+   }
+
    let cadastroForm = new FormData()
    console.log(imagem)
    if(imagem!=null) { cadastroForm.append('file' , imagem.arquivo)}
@@ -44,14 +67,15 @@ useEffect(() => {
       })
       router.push('/')
 
-  
+      setEstaSubmetendo(false)
 
    } catch(error) {
     alert('Erro ao Cadastrar! : ' + error.response.data.erro)
     console.log(error.response.data.erro)
+    setEstaSubmetendo(false)
    }
 
-    
+      setEstaSubmetendo(false)
 
   }
 

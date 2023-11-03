@@ -4,39 +4,39 @@ import { useRouter } from 'next/router'
 import UsuarioService from "@/services/UsuarioService";
 import { useEffect } from "react";
 import { useState } from "react";
+import imgAvatar from '../../public/avatar.svg'
 export default function  CabecalhoUsuario(estaLogado) {
     const router = useRouter()
     const usuarioService = new UsuarioService();
-    const [usuario,setUsuario] = useState('')
-   async function obterUsuario() {
-    
-        
-    }
-   
-
-
-
-   
+    const [usuario,setUsuario] = useState(null)
+  
+          
         useEffect( () => {
             async function getUsuario() {
-            const usuarioData = await usuarioService.obterUsuario();
-            const user = usuarioData.data
-            setUsuario(user)
+                if(estaLogado.estaLogado.estaLogado === true) {
+
+                    const usuarioData = await usuarioService.obterUsuario();
+                    const user = usuarioData.data
+                    setUsuario(user)
+                }
+           
             
     }
-       
-            getUsuario();
+                
+                    getUsuario();
+                    
+                
         }, []); 
         
        
-        
+        console.log(usuario)
     return (
         <>
         <div className="cabecalhoUsuarioContainer">
            
-                    {estaLogado ? (
+                    {estaLogado && usuario!= null? (
                         <div className="informacoesUsuario">
-                            <img src={usuario.avatar} className="avatar" alt="avatar do usuario"/>
+                            <img src={usuario.avatar != null ? usuario.avatar : imgAvatar} className="avatar" alt="avatar do usuario"/>
                                 <strong>{usuario.nome}</strong>
                             <div className="textos">
                             <p>Nível {usuario.level}</p>

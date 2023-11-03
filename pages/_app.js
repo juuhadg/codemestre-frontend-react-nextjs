@@ -5,21 +5,29 @@ import { useRouter } from 'next/router'
 import { GoogleOAuthProvider } from "@react-oauth/google"
 import UsuarioService from '@/services/UsuarioService'
 
+
 const  GOOGLE_CLIENT_ID  = '665992785702-vkr3gn3vinvj1rhhloddlf7ivj4nkek9.apps.googleusercontent.com'
 
 
 export default function App({ Component, pageProps }) {
     
   const router = useRouter()
-
+var estaLogado = false
   const usuarioService = new UsuarioService();
   if(typeof window !== 'undefined') {
 
       const usuarioData = usuarioService.obterInfoUsuarioLogado()
-          if(usuarioData !== null) {
-  
-             var estaLogado = true
-          } else {estaLogado = false}
+      console.log(usuarioData)
+          if(usuarioData.id !== null ) {
+
+             estaLogado=true
+            
+          } 
+          else {estaLogado=false
+            
+          
+          }
+
   }
 
   return ( 

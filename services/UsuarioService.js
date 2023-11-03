@@ -33,6 +33,12 @@ export default class UsuarioService extends HttpRequest{
 
     }
 
+    async cadastroGoogle(tokenGoogle) {
+        return this.post('/cadastroGoogle',tokenGoogle)
+    }
+
+
+
     async obterUsuario() {
         return this.get('/usuario')
     }

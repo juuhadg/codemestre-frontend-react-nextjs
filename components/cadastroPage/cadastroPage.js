@@ -5,6 +5,7 @@ import ImagemAvatar from '../../public/avatar.svg'
 import { useEffect } from "react";
 import jwtDecode from "jwt-decode";
 import { useRouter } from "next/router";
+import UsuarioService from "@/services/UsuarioService";
 export default function CadastroPage() {
     const router = useRouter()
 const [imagem, setImagem] = useState(null);
@@ -12,6 +13,7 @@ const [nome, setNome] = useState("");
 const [email, setEmail] = useState("");
 const [senha, setSenha] = useState("");
 const [confirmacaoSenha, setconfirmacaoSenha] = useState("");
+const usuarioService = new UsuarioService();
 
 useEffect(() => {
        
@@ -24,16 +26,33 @@ useEffect(() => {
     };
   }, []); 
 
-  const aoSubmeter = (e) => {
-   e.preventDefault();
-   let info = {
-    avatar: imagem,
-    nome : nome,
-    email : email,
-    senha : senha
+  const aoSubmeter = async (e) => {
 
+   e.preventDefault();
+   let cadastroForm = new FormData()
+   console.log(imagem)
+   if(imagem!=null) { cadastroForm.append('file' , imagem.arquivo)}
+   cadastroForm.append('nome' , nome)
+   cadastroForm.append('email' , email)
+   cadastroForm.append('senha' , senha)
+   try{
+      await usuarioService.cadastro(cadastroForm)
+
+      await usuarioService.login({
+        email:email,
+        senha:senha
+      })
+      router.push('/')
+
+  
+
+   } catch(error) {
+    alert('Erro ao Cadastrar! : ' + error.response.data.erro)
+    console.log(error.response.data.erro)
    }
-   console.log(info)
+
+    
+
   }
 
 
@@ -66,11 +85,17 @@ useEffect(() => {
     width={500}
     text="signup_with"
 
-  onSuccess={credentialResponse => {
-    const objetoString = JSON.stringify(credentialResponse, null, 2)
-    console.log(objetoString)
-    var credencialResposta = jwtDecode(credentialResponse.credential)
-    console.log(credencialResposta)
+  onSuccess={async credentialResponse => {
+    var credencialResposta = credentialResponse.credential
+    try{
+      await usuarioService.cadastroGoogle({tokenGoogle :credencialResposta})
+      await usuarioService.loginGoogle({tokenGoogle:credencialResposta})
+      router.push('/')
+
+    }catch(error) {
+      alert(error.response.data.erro)
+      console.log(error)
+    }
   }}
 
 

@@ -1,7 +1,7 @@
 import { useState,useEffect } from "react";
 import { GoogleLogin } from '@react-oauth/google';
 import jwtDecode from "jwt-decode";
-import LoginForm from "./loginForm";
+import LoginForm from "./LoginForm";
 import { useRouter } from 'next/router'
 import UsuarioService from "@/services/UsuarioService";
 

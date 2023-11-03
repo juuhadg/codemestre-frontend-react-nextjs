@@ -96,7 +96,7 @@ useEffect(() => {
     <input placeholder="E-mail" type="text" onChange={(e)=>setEmail(e.target.value)}/>
     <input placeholder="Senha" type="password" onChange={(e)=>setSenha(e.target.value)}/>
     <input placeholder="Confirmar a Senha" type="password" onChange={(e)=>setconfirmacaoSenha(e.target.value)}/>
-    <button>Cadastrar</button>
+    <button type="submite" disabled={aoSubmeter}>Cadastrar</button>
            </form>
               
          <div className="botaoGoogle">

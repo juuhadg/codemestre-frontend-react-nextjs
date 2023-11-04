@@ -92,7 +92,7 @@ O objetivo é escrever a string " Hello World" pelo console da aplicação que e
             `
         }/>
         <h2>Agora uma missao digite aqui</h2>
-        <InputCodigo lingugagem={'csharp'}/>
+        <InputCodigo linguagem={'csharp'}/>
         </>
     )
 }

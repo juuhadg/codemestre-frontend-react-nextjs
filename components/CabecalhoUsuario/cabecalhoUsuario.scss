@@ -49,6 +49,7 @@
     .deslogado {
         display: flex;
         align-items: center;
+        padding-left: 200px;
         
         button {
         color: $verde;
@@ -57,6 +58,14 @@
         border: 1px solid $verde;
         border-radius: 15px;
         padding: 10px 20px;
+        width: 150px;
+        height: 55px;
+
+        &:hover {
+            background-color: $verde;
+            color: $branco;
+            cursor: pointer;
+        }
         
     }
     }

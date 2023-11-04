@@ -2,7 +2,7 @@ import ConteudoCs from "./ConteudoCs";
 
 import React, { useState } from 'react';
 export default function CsPage() {
-    const [conteudo, setConteudo] = useState(null);
+    const [conteudo, setConteudo] = useState(1);
     
     return (
     <>

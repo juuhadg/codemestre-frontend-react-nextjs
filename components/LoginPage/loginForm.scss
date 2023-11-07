@@ -103,10 +103,16 @@
     margin-top: 10px;
   }
   
-  #forgot-pass a {
+  #forgot-pass span {
     color: #868686;
     font-size: 12px;
     text-decoration: none;
+
+    &:hover {
+      cursor: pointer;
+      color: $branco;
+      font-size: 12.5px;
+    }
   }
   
   

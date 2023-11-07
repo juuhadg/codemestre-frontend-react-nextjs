@@ -58,7 +58,7 @@ export default function LoginForm() {
           <button id="submit-button" type="submit" disabled={estaSubmetendo}>Login</button>
         </div>
         <div id="forgot-pass">
-          <a href="#">Esqueceu sua senha?</a>
+          <span onClick={()=>router.push('/esqueciASenha')}>Esqueceu sua senha?</span>
         </div>
 
         

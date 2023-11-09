@@ -1,5 +1,6 @@
 import CodeBox from "@/components/CodeBox/CodeBox";
 import InputCodigo from "@/components/InputCodigo/InputCodigo";
+import TituloDesafio from "@/components/TituloDesafio/TituloDesafio";
 
 export default function ConteudoCs2() {
     return (
@@ -91,8 +92,19 @@ O objetivo é escrever a string " Hello World" pelo console da aplicação que e
             }
             `
         }/>
-        <h2>Agora uma missao digite aqui</h2>
-        <InputCodigo linguagem={'csharp'}/>
+            <TituloDesafio/>
+        <InputCodigo linguagem={'csharp'} codigoInicial={`using System;
+        namespace MeuPrograma
+             {
+                 class Programa
+                 {
+                     static void Main()
+                     {
+                         
+                     }
+                 }
+             }
+    `} TituloProblema={'problema csharp test'} descricaoProblema={'Faça o Console Escrever o nome " José ", simples assim'} respostaEsperada={"José"}/>
         </>
     )
 }

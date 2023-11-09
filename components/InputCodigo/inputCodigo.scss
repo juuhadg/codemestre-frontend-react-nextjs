@@ -1,3 +1,22 @@
 .InputCodigoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     margin-top: 20px;
+    section {
+        border-radius:15px ;
+    }
+    button {
+        background-color: $verde;
+        border: 1px solid $verde;
+        outline: none;
+        color: $branco;
+        padding: 10px 30px;
+        border-radius: 15px;
+        cursor: pointer;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        width: 40%;
+}
 }

@@ -3,12 +3,16 @@ import Editor from '@monaco-editor/react';
 import estaLogado from '@/functions/estaLogado';
 import converterParaBase64 from '@/functions/converterParaBase64';
 import ProblemaService from '@/services/ProblemaService';
+import PrecisaDeLogin from '../PrecisaDeLogin/PrecisaDeLogin';
 
 
 
 const InputCodigo = ({
   linguagem,
   codigoInicial,
+  descricaoProblema,
+  TituloProblema,
+  respostaEsperada
   
   
 }) => {
@@ -29,10 +33,10 @@ const InputCodigo = ({
    
     try{
       await problemaService.executeCode({
-        linguagemUsada: "csharp",
+        linguagemUsada: linguagem,
         codigo: codigoConvertido,
-        problema: "csharp aula 2",
-        respostaEsperada: "Olá Mundo!"
+        problema: TituloProblema,
+        respostaEsperada: respostaEsperada
       })
       alert("SUCESSO!")
 
@@ -57,6 +61,7 @@ const InputCodigo = ({
   return (
     <div className='InputCodigoContainer'>
       {usuarioLogado ? (<>
+      <p>{descricaoProblema}</p>
            <Editor
            height="35vh"
          defaultLanguage={linguagem}
@@ -69,7 +74,7 @@ const InputCodigo = ({
       />
       <button onClick={aoEnviar}>Enviar</button></>
       ) : (
-        <h1>Faça Login para poder resolver os Desafios e subir seu nível na programação</h1>
+       <PrecisaDeLogin/>
       )}
 
    </div>

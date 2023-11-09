@@ -4,8 +4,6 @@ import { useEffect } from "react";
 
 export default function EsqueciASenha() {
 
-
-
     return (
         <EsqueciASenhaPage/>
     )

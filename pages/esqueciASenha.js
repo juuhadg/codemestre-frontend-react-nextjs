@@ -1,5 +1,12 @@
+import EsqueciASenhaPage from "@/components/EsqueciASenha/EsqueciASenhaPage"
+import { useEffect } from "react";
+
+
 export default function EsqueciASenha() {
+
+
+
     return (
-        <h1>Esqueci minha senha =/</h1>
+        <EsqueciASenhaPage/>
     )
 }

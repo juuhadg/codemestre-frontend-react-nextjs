@@ -62,10 +62,6 @@ estaAutenticado(){
     return localStorage.getItem('token') !== null;
 }
 
-async pesquisar(termoDaPesquisa) {
-    return this.get('/pesquisa?filtro=' + termoDaPesquisa)
-}
-
 obterInfoUsuarioLogado() {
     return {
         id: localStorage.getItem('id'),
@@ -75,6 +71,9 @@ obterInfoUsuarioLogado() {
     }
 }
 
+async esqueciASenha(email) {
+    return this.post('/esqueciASenha', email)
+}
  
 
 }

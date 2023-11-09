@@ -1,0 +1,62 @@
+.esqueciASenhaPage {
+    
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    padding: 0px 32px;
+    .esqueciASenhaContainer {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: fit-content;
+        margin-top: 300px;
+        background-color: $cinzaMedio;
+        padding: 50px;
+        border: 1px solid $verde;
+        border-radius: 15px;
+        h1{
+            color: $verde;
+            font-size: 26px;
+        }
+        .titulos {
+    
+            p {
+                color: $branco;
+            }
+    
+        }
+    
+            form {
+                input {
+                    background-color: transparent;
+                    outline: none;
+                    border: 1px solid $verde;
+                    border-radius: 10px;
+                    padding: 10px 20px;
+                    width: 300px;
+                    color: $branco;
+                    font-size: 16px;
+                    margin-right: 30px;
+                }
+
+                button {
+                    background-color: $verde;
+                    outline: none;
+                    border: 1px solid $verde;
+                    color: $branco;
+                    font-size: 20px;
+                    padding:  10px 30px;
+                    border-radius: 15px;
+                    cursor: pointer;
+                }
+            }
+
+
+    }
+}
+
+

@@ -36,7 +36,7 @@ var estaLogado = false
     <Head>
     <title>CodeMestre</title>
     </Head>
-     {(router.asPath != '/login' && router.asPath != '/cadastro') && (<Cabecalho estaLogado ={estaLogado}/>)}
+     {(router.asPath != '/login' && router.asPath != '/cadastro' && router.asPath !='/esqueciASenha') && (<Cabecalho estaLogado ={estaLogado}/>)}
   <Component {...pageProps} estaLogado={estaLogado}/>
   </GoogleOAuthProvider>
   </>

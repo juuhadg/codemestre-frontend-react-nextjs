@@ -1,5 +1,5 @@
 import React from "react";
-export default function ListaConteudos({setar}) {
+export default function ListaConteudos({setar}) {                                 
         return (
             <>
            <div class="card">

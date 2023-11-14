@@ -1,0 +1,12 @@
+.progressoContainer {
+    margin: 0 auto;
+    text-align: center;
+    width: fit-content;
+    border: 1px solid $verde;
+    padding: 100px 200px;
+    border-radius: 15px;
+    color: $branco;
+    img {
+        border-radius: 50px;
+    }
+}

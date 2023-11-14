@@ -3,7 +3,9 @@ import iconPergaminho from '../../public/iconPergaminho.svg'
 import iconNinja from '../../public/iconNinja.svg'
 import iconMestre from '../../public/iconMestre.svg'
 import imgNinjaGrande from '../../public/ninja.png'
+import { useRouter } from 'next/router'
 export default function Home() {
+  const router = useRouter();
     return (
         <>
       
@@ -29,7 +31,7 @@ export default function Home() {
          <p>Linguagens Disponíveis: <br></br> C# - JavaScript - Python</p>
         
           
-          <button>Comece A Sua Jornada</button>
+          <button onClick={()=>router.push('/cadastro')}>Comece A Sua Jornada</button>
         </div>
 
         <div className="cardInformacoes">

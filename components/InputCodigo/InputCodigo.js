@@ -5,6 +5,9 @@ import converterParaBase64 from '@/functions/converterParaBase64';
 import ProblemaService from '@/services/ProblemaService';
 import PrecisaDeLogin from '../PrecisaDeLogin/PrecisaDeLogin';
 import UsuarioService from '@/services/UsuarioService';
+import ProblemaJaConcluido from '../problemaJaConcluido/ProblemaJaConcluido';
+import Image from 'next/image';
+import loadingGif from '@/public/loader.gif';
 
 
 
@@ -21,6 +24,7 @@ const InputCodigo = ({
 
   const [code, setCode] = useState(codigoInicial);
   const [usuario, setUsuario] = useState({});
+  const [loading, setLoading] = useState(true)
   var usuarioLogado = estaLogado()
   const problemaService = new ProblemaService();
   const usuarioService = new UsuarioService();
@@ -30,13 +34,16 @@ const InputCodigo = ({
       try {
        const user = await usuarioService.obterUsuario();
         setUsuario(user.data)
+        setLoading(false)
         
       } catch(error) {
         console.log(error)
+        setLoading(false)
       }
     }
 
     ObterInfo();
+ 
     
  
   },[])
@@ -83,11 +90,10 @@ const InputCodigo = ({
   
   return (
     <div className='InputCodigoContainer'>
+      {loading ? (<Image src={loadingGif} width={120}/>) : (<>
 
     { usuario.problemasResolvidos && indice != -1 ?(
-      <>
-      <h1>Voce Ja Solucionou Este Problema!<br></br> Pode Partir para o Próximo</h1>
-      </>
+      <ProblemaJaConcluido/>
     ) : (
       <>
       {usuarioLogado ? (<>
@@ -108,6 +114,7 @@ const InputCodigo = ({
       )}
     </>
     )}  
+      </>)}
 
 
 

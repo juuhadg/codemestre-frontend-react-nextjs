@@ -1,9 +1,11 @@
 .TituloDesafio {
-    background-color: $cinzaMedio;
+    
     padding:10px 30px;
-    border: 1px solid $verde;   
-    border-radius: 15px;
+    border-top: 2px solid $verde;
     text-align: center;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 25px;
     h2 {
         font-size: 16px;
     }

@@ -8,22 +8,5 @@
     margin: 0;
   }
 
-@import '../components/Home/home.scss';
-@import '../components/ListaConteudos/ListaConteudo.scss';
-@import '../components/csPage/cs.scss';
-@import '../components/CodeBox/prism-custom-theme.scss';
-@import '../components/TituloDesafio/tituloDesafio.scss';
-@import '../components/CodeBox/code-box.scss';
-@import'../components/Cabecalho/cabecalho.scss';
-@import '../components/CabecalhoUsuario/cabecalhoUsuario.scss';
-@import '../components/InputCodigo/inputCodigo.scss';
-@import '../components/CabecalhoNav/cabecalhonav.scss';
-@import '../components/linguagensLista/linguagensLista.scss';
-@import '../components/PageConteudos/PageConteudos.scss';
-@import '../components/CardBasico/CardBasico.scss';
-@import '../components/LoginPage/login.scss';
-@import '../components/LoginPage/loginForm.scss';
-@import'../components/cadastroPage/cadastro.scss';
-@import'../components/PrecisaDeLogin/precisaDeLogin.scss';
-@import '../components/EsqueciASenha/esqueciASenha.scss';
+@import './componentImports.scss';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap');

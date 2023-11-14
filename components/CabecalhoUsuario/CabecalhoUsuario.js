@@ -41,7 +41,7 @@ export default function  CabecalhoUsuario(estaLogado) {
                         
                         estaLogado && usuario!= null? (
                             <div className="informacoesUsuario">
-                                <img src={usuario.avatar != null ? usuario.avatar : imgAvatar} className="avatar" alt="avatar do usuario"/>
+                                <img src={usuario.avatar ? usuario.avatar : imgAvatar} className="avatar" alt="avatar do usuario"/>
                                     <strong>{usuario.nome}</strong>
                                 <div className="textos">
                                 <p>Nível {usuario.level}</p>

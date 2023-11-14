@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import Editor from '@monaco-editor/react';
 import estaLogado from '@/functions/estaLogado';
 import converterParaBase64 from '@/functions/converterParaBase64';
 import ProblemaService from '@/services/ProblemaService';
 import PrecisaDeLogin from '../PrecisaDeLogin/PrecisaDeLogin';
+import UsuarioService from '@/services/UsuarioService';
 
 
 
@@ -19,14 +20,33 @@ const InputCodigo = ({
   
 
   const [code, setCode] = useState(codigoInicial);
+  const [usuario, setUsuario] = useState({});
   var usuarioLogado = estaLogado()
   const problemaService = new ProblemaService();
+  const usuarioService = new UsuarioService();
 
+  useEffect(()=>{
+    async function ObterInfo () {
+      try {
+       const user = await usuarioService.obterUsuario();
+        setUsuario(user.data)
+        
+      } catch(error) {
+        console.log(error)
+      }
+    }
 
+    ObterInfo();
+    
+ 
+  },[])
+
+  console.log(usuario)
   function handleEditorChange(value, event) {
     setCode(value)
   }
 
+ 
  async function aoEnviar() {
   console.log("ENVIUANDOP")
     const codigoConvertido = converterParaBase64(code);
@@ -58,8 +78,18 @@ const InputCodigo = ({
   }
   Editor.theme = 'vs-dark'
 
+  if(usuario.problemasResolvidos) {   var indice = usuario.problemasResolvidos.indexOf(TituloProblema); }
+
+  
   return (
     <div className='InputCodigoContainer'>
+
+    { usuario.problemasResolvidos && indice != -1 ?(
+      <>
+      <h1>Voce Ja Solucionou Este Problema!<br></br> Pode Partir para o Próximo</h1>
+      </>
+    ) : (
+      <>
       {usuarioLogado ? (<>
       <p>{descricaoProblema}</p>
            <Editor
@@ -73,9 +103,15 @@ const InputCodigo = ({
          
       />
       <button onClick={aoEnviar}>Enviar</button></>
-      ) : (
+      ) :(
        <PrecisaDeLogin/>
       )}
+    </>
+    )}  
+
+
+
+      
 
    </div>
   );

@@ -3,6 +3,8 @@ import UsuarioService from "@/services/UsuarioService";
 import loadingGif from "@/public/loader.gif";
 import Image from "next/image";
 import estaLogado from "@/functions/estaLogado";
+import CabecalhoProgresso from "../Progresso/CabecalhoProgresso";
+import RankCabecalho from "../Progresso/RankCabecalho";
 export default function ProgressoPage() {
     const usuarioService = new UsuarioService();
     const [usuario,setUsuario] = useState({})
@@ -35,20 +37,12 @@ export default function ProgressoPage() {
                 {usuarioLogado  === false ? (
                     <h1>Faça Login Antes</h1>
                 ) : (
-                    <div>
-                        <img src={usuario.avatar} width={80} height={80}/>
-                        <h1>{usuario.nome}</h1>
-                        <h1> Nivel {usuario.level}</h1>
-                        <h1>Total de Problemas Resolvidos : {usuario.
-NumeroDeproblemasResolvidos}</h1>
-            <h1>{usuario.level <= 10 ? 'Novato' : usuario.level > 10 < 20 ? 'Intermedário' : 'Mestre'}</h1>
+                        <>
+                        <CabecalhoProgresso usuario={usuario}/>
                             <div>
-                                <h1>Linguagens</h1>
-                                <p>C# : {usuario.problemasResolvidosPorLinguagem.csharp}</p>
-                                <p>Python : {usuario.problemasResolvidosPorLinguagem.python}</p>
-                                <p>Javascript : {usuario.problemasResolvidosPorLinguagem.javascript}</p>
+                                <RankCabecalho usuario={usuario}/>
                             </div>
-                    </div>
+                    </>
                 )}
                 </>
             )

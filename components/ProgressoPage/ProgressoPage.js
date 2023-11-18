@@ -5,6 +5,7 @@ import Image from "next/image";
 import estaLogado from "@/functions/estaLogado";
 import CabecalhoProgresso from "../Progresso/CabecalhoProgresso";
 import RankCabecalho from "../Progresso/RankCabecalho";
+import ProgressoLinguagens from "../Progresso/ProgressoLinguagens";
 export default function ProgressoPage() {
     const usuarioService = new UsuarioService();
     const [usuario,setUsuario] = useState({})
@@ -39,7 +40,8 @@ export default function ProgressoPage() {
                 ) : (
                         <>
                         <CabecalhoProgresso usuario={usuario}/>
-                            <div>
+                            <div className="parteDeBaixo">
+                            <ProgressoLinguagens linguagens={usuario.problemasResolvidosPorLinguagem}/>
                                 <RankCabecalho usuario={usuario}/>
                             </div>
                     </>

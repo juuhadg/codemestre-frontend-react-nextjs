@@ -42,7 +42,7 @@ export default function ProgressoPage() {
                         <CabecalhoProgresso usuario={usuario}/>
                             <div className="parteDeBaixo">
                             <ProgressoLinguagens linguagens={usuario.problemasResolvidosPorLinguagem}/>
-                                <RankCabecalho usuario={usuario}/>
+                                <RankCabecalho nivel={usuario.level}/>
                             </div>
                     </>
                 )}

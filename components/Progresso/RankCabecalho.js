@@ -1,10 +1,16 @@
-import imgRank from '../../public/CodeMestreIcon.png';
+import { obterRankUsuario } from '@/functions/obterRankUsuario';
 import Image from 'next/image';
-export default function RankCabecalho({usuario}) {
-    var rank = '';
-    if(usuario.level < 10){rank = 'Iniciante';} 
-    else if(usuario.level < 20){rank = 'Intermediário';} 
-    else if(usuario.level < 30){rank = 'Mestre';} 
+
+
+export default function RankCabecalho({nivel}) {
+   
+        const rankAtualDoUsuario = obterRankUsuario(nivel);
+        const rank = rankAtualDoUsuario.rank;
+        const imgRank = rankAtualDoUsuario.img
+
+       
+
+   
     return (
         <>
         <div className="rankContainer">

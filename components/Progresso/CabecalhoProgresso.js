@@ -14,16 +14,30 @@ export default function CabecalhoProgresso ({usuario}) {
         <div className="cabecalhoProgressoContainer">
             <div className="usuario">
             <img src={usuario.avatar} width={140} height={140}/>
-           <section> <p className="nome">{usuario.nome}</p>
-            <p className="nivel">Nivel {usuario.level}</p>
+           <section> <strong className="nome">{usuario.nome}</strong>
+            <strong className="nivel">Nivel {usuario.level}</strong>
                 </section>
             </div>
 
             <div className="textos">
-                <p>Missao Diaria X</p>
-                <p>Problemas Resolvidos :&nbsp; {usuario.NumeroDeproblemasResolvidos}</p>
-                <p>Linguagem Favorita : &nbsp;{linguagemFavorita}</p>
-            </div>
+            <section>
+            <p>Diaria</p>
+            <strong>X</strong>
+            </section>
+
+            <section>
+            <p>Resolvidos</p>
+            <strong>{usuario.NumeroDeproblemasResolvidos}</strong>
+            </section>
+
+            <section>
+            <p>Favorita</p>
+            <strong>{linguagemFavorita}</strong>
+            </section>
+              
+               
+            </div> 
+          
         </div>
 
         </>

@@ -32,7 +32,9 @@ export default function ProgressoPage() {
     return (
         <div className="progressoContainer">
             {loading ? (
+                <div className="loading">
                 <Image src={loadingGif} width={80}/>
+                </div>
             ) : (
                 <>  
                 {usuarioLogado  === false ? (
@@ -44,6 +46,7 @@ export default function ProgressoPage() {
                             <ProgressoLinguagens linguagens={usuario.problemasResolvidosPorLinguagem}/>
                                 <RankCabecalho nivel={usuario.level}/>
                             </div>
+                            
                     </>
                 )}
                 </>

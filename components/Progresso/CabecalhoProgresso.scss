@@ -1,34 +1,72 @@
 .cabecalhoProgressoContainer{
 display: flex;
-justify-content: space-between;
-background-image: url('../../public/profilebg.jpg');
+justify-content: center;
+align-items: center;
+text-align: center;
+flex-direction: column;
 background-size: cover;
 background-repeat: no-repeat;
 background-position: 40%;
 padding: 20px ;
-border-radius: 5px;
-border: 1px solid $branco;
+
+
     .usuario {
-    display: flex;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+      
+
+        img {
+            border-radius: 100px;
+            border: 10px solid #9cf27f;
+            border-spacing: 10px;
+            padding: 13px;
+            background-color: $cinzaMedio;
+            
+        }
+
+
+
     section {
         margin-left: 10px;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-       p{
-            font-size: 16px;
-            &.nome {
-               padding-top: 5px;
-               margin-top: 0px;
-            }
+       strong{
+            font-size: 26px;
+        }
+        strong.nome {
+           padding-top: 5px;
+           margin-top: 0px;
+           color: #9cf27f;
+           font-size: 1.66vw;
+           margin-bottom: 20px;
         }
     }
 }
 
 .textos {
-    p{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    right: 20%;
+    transform: translate(50%,-120%);
+    
+    gap: 20px;
 
-        font-size: 16px;
+    section {
+        margin: 0;
+        padding: 0;
+        max-height: fit-content;
+    }
+
+    p,strong{
+
+        font-size: 18px;
     }
 }
 }

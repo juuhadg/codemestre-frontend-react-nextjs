@@ -1,0 +1,62 @@
+.rankingContainer {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $cinzaMedio;
+    border-radius: 15px;
+    width: 80vw;
+
+    .usuario {
+        display: flex;
+        align-items: center;
+        width: 90%;
+        border: 1px solid $cinza;
+        border-radius: 10px;
+        margin-bottom: 5px;
+        padding: 10px;
+        color: $branco;
+        justify-content: flex-start;
+        strong.rankNum {
+            margin-right: 100px;
+            margin-left: 20px;
+            font-size: 16px;
+            color: $branco;
+        }
+
+        .userInfo {
+
+            img {
+                border-radius: 100%;
+                border: 2px solid $cinza;
+            }
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            
+            strong {
+                color: $verde;
+            }
+            flex: 0.9;
+           
+        }
+
+        .userStats {
+            display: flex;
+            flex-direction: column;
+
+            p {
+                margin: 2px;
+            }
+
+            strong {
+                color: $verde;
+                margin: 0px;
+            }
+        }
+
+}
+
+
+}

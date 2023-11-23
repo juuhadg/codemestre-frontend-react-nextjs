@@ -74,6 +74,10 @@ obterInfoUsuarioLogado() {
 async esqueciASenha(email) {
     return this.post('/esqueciASenha', email)
 }
+
+async obterRanking() {
+    return this.get('/ranking')
+}
  
 
 }

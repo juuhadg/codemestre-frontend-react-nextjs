@@ -43,7 +43,8 @@ const TerceiraMaiorLinguagem = {
 
 
     return (
-        <><div>
+        <>
+        <div>
         <h1>Linguagens</h1>
         <div className="linguagensContainer">
 

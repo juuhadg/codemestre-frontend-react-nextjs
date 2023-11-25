@@ -3,6 +3,7 @@ import { useEffect , useState} from "react"
 import imgLoading from '@/public/loader.gif'
 import defaultImg from '@/public/avatar.svg'
 import Image from "next/image";
+import { obterRankUsuario } from "@/functions/obterRankUsuario";
 export default function RankingPage() {
     const usuarioService = new UsuarioService();
     const [ranking , setRanking] = useState([]);
@@ -42,6 +43,7 @@ export default function RankingPage() {
 
                     <img src={user.avatar != undefined ? user.avatar : defaultImg} width={40} height={40}/>
                     <strong>{user.nome}</strong>
+                    
                     
                     </section>
 

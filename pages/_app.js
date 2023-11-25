@@ -20,7 +20,7 @@ var estaLogado = false
       console.log(usuarioData)
           if(usuarioData.id !== null ) {
 
-             estaLogado=true
+             estaLogado=true  
             
           } 
           else {estaLogado=false

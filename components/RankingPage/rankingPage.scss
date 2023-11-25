@@ -7,17 +7,31 @@
     background-color: $cinzaMedio;
     border-radius: 15px;
     width: 80vw;
+    border: 2px solid $branco;
+
+    .usuarioLogado {
+        background-color: $cinzaEscuro !important;
+        border: 2px solid $verde !important;
+        border-radius: 10px !important;
+
+        strong {
+            color: $verde !important;
+        }
+    }
 
     .usuario {
         display: flex;
         align-items: center;
         width: 90%;
-        border: 1px solid $cinza;
-        border-radius: 10px;
+        border-bottom: 1px solid $cinza;
         margin-bottom: 5px;
         padding: 10px;
         color: $branco;
         justify-content: flex-start;
+
+      
+
+
         strong.rankNum {
             margin-right: 100px;
             margin-left: 20px;
@@ -36,10 +50,10 @@
             gap: 20px;
             
             strong {
-                color: $verde;
+                color: $cinza;
             }
             flex: 0.9;
-           
+          
         }
 
         .userStats {
@@ -57,6 +71,15 @@
             }
         }
 
+        .rankImg {
+           margin-left: 50px;
+           flex: 0.2;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
 }
 
 

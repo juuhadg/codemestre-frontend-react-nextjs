@@ -32,10 +32,12 @@ const maiorLinguagem = {
            resolvidos: paresChaveValor[0].valor,
            icon: obterIcone(paresChaveValor[0].chave),
 }
+
 const segundaMaiorLinguagem = {
     resolvidos: paresChaveValor[1].valor,
     icon: obterIcone(paresChaveValor[1].chave),
 }
+
 const TerceiraMaiorLinguagem = {
     resolvidos: paresChaveValor[2].valor,
     icon: obterIcone(paresChaveValor[2].chave),

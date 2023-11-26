@@ -42,13 +42,19 @@ export default function  CabecalhoUsuario(estaLogado) {
                         estaLogado && usuario!= null? (
                             <div className="informacoesUsuario">
                                 <img src={usuario.avatar ? usuario.avatar : imgAvatar} className="avatar" alt="avatar do usuario"/>
-                                    <strong>{usuario.nome}</strong>
-                                <div className="textos">
-                                <p>Nível {usuario.level}</p>
-                                    <progress value={usuario.xp} max="500"></progress>
-                                    <p>{usuario.xp}xp / 500xp</p>
-                                 </div>
-                                
+                                    <div className="nomeENivel">
+                                    <strong className="nome">{usuario.nome}</strong>
+                                <strong className="nivel">Nível {usuario.level}</strong>
+                                </div>
+
+                                {usuario.missaoDiaria && (
+                                    <div className="missaoDiariaContainer">
+
+                                        <button>MIssao Diaria</button>
+
+                                    </div>
+                                )}
+
                             </div>
                         ): (
                             <div className="deslogado">

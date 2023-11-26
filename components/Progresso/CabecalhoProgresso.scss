@@ -20,11 +20,35 @@ padding: 20px ;
 
         img {
             border-radius: 100px;
-            border: 10px solid #9cf27f;
+            border: 10px solid $verdeClaro;
             border-spacing: 10px;
             padding: 13px;
             background-color: $cinzaMedio;
             
+        }
+
+        progress {
+            background-color: transparent;
+            border: 2px solid $verde;
+            margin: 15px;
+            width: 100%;
+            height: 25px;
+        }
+
+        progress::-webkit-progress-value {
+            
+            background: $verde;
+             
+        }
+
+        progress::-webkit-progress-bar {
+            background-color: $cinzaEscuro;
+            
+            
+        }
+        
+        progress::-moz-progress-bar {
+            background: $verde; /* Cor do preenchimento da barra de progresso (Mozilla) */
         }
 
 

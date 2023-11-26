@@ -14,9 +14,12 @@ export default function CabecalhoProgresso ({usuario}) {
         <div className="cabecalhoProgressoContainer">
             <div className="usuario">
             <img src={usuario.avatar} width={140} height={140}/>
-           <section> <strong className="nome">{usuario.nome}</strong>
+           <section> 
+            <strong className="nome">{usuario.nome}</strong>
             <strong className="nivel">Nivel {usuario.level}</strong>
                 </section>
+            <progress value={usuario.xp} max="500"></progress>
+            <strong>{usuario.xp}xp / 500xp</strong>
             </div>
 
             <div className="textos">

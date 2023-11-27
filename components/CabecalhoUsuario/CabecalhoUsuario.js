@@ -6,11 +6,15 @@ import { useEffect } from "react";
 import { useState } from "react";
 import imgAvatar from '../../public/avatar.svg';
 import imgLoad from '../../public/loader.gif';
+import missaoDiariaIcon from '@/public/diariaIcon.svg';
+import fogo from '@/public/fogo.svg';
+import fogoCinza from '@/public/fogoCinza.svg';
 export default function  CabecalhoUsuario(estaLogado) {
     const router = useRouter()
     const usuarioService = new UsuarioService();
     const [isLoading,setIsLoading] = useState(false)
     const [usuario,setUsuario] = useState(null)
+    const [mostrarDescricao,setMostrarDescricao] = useState(false)
   
           
         useEffect( () => {
@@ -50,10 +54,23 @@ export default function  CabecalhoUsuario(estaLogado) {
                                 {usuario.missaoDiaria && (
                                     <div className="missaoDiariaContainer">
 
-                                        <button>MIssao Diaria</button>
+                                        <button>
+                                        <Image src={missaoDiariaIcon}/>
+                                        Missao Diaria Disponível!</button>
 
                                     </div>
                                 )}
+
+                                
+                                    <div className="streakContainer" onMouseEnter={()=>setMostrarDescricao(true)} onMouseLeave={()=>setMostrarDescricao(false)}> 
+                                        <Image src={usuario.streak > 2  ? fogo : fogoCinza}/>
+                                        <strong>{usuario.streak}</strong>
+                                        {mostrarDescricao && (
+                                            <strong className="descricao">Streak de Missoes Diarias</strong>
+                                        )}
+                                    </div>
+                                   
+                               
 
                             </div>
                         ): (

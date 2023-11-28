@@ -16,7 +16,8 @@ const InputCodigo = ({
   codigoInicial,
   descricaoProblema,
   TituloProblema,
-  respostaEsperada
+  respostaEsperada,
+  missaoDiaria
   
   
 }) => {
@@ -58,18 +59,34 @@ const InputCodigo = ({
   console.log("ENVIUANDOP")
     const codigoConvertido = converterParaBase64(code);
    
-    try{
-      await problemaService.executeCode({
-        linguagemUsada: linguagem,
-        codigo: codigoConvertido,
-        problema: TituloProblema,
-        respostaEsperada: respostaEsperada
-      })
-      alert("SUCESSO!")
+    if(!missaoDiaria) {
 
-    }catch(error) {
-      console.log(error)
+      try{
+        await problemaService.executeCode({
+          linguagemUsada: linguagem,
+          codigo: codigoConvertido,
+          problema: TituloProblema,
+          respostaEsperada: respostaEsperada
+        })
+        alert("SUCESSO!")
+  
+      }catch(error) {
+        console.log(error)
+      }
     }
+     else {
+        try {
+            await problemaService.enviarMissaoDiaria({
+              linguagemUsada:linguagem,
+              codigo:codigoConvertido
+            });
+            
+        } catch(error) {
+            alert(error.response.data);
+        }
+     }
+
+
 
     
   }

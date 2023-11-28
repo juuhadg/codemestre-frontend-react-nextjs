@@ -63,7 +63,7 @@ export default function  CabecalhoUsuario(estaLogado) {
 
                                 
                                     <div className="streakContainer" onMouseEnter={()=>setMostrarDescricao(true)} onMouseLeave={()=>setMostrarDescricao(false)}> 
-                                        <Image src={usuario.streak > 2  ? fogo : fogoCinza}/>
+                                        <Image src={usuario.streak >= 1  ? fogo : fogoCinza}/>
                                         <strong>{usuario.streak}</strong>
                                         {mostrarDescricao && (
                                             <strong className="descricao">Streak de Missoes Diarias</strong>

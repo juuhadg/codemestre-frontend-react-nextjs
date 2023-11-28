@@ -7,13 +7,16 @@ export default function missaoDiaria() {
 
     return (
         <>
-        <div className="missaoDiariaContainer">
-            {!usuarioLogado && (
+        <div className="missaoDiariaPageContainer">
+            {!usuarioLogado ? (
                 <PrecisaDeLogin/>
-            )}
+            ) : (
+
+                <MissaoDiariaComponente/>
+            )
+            }
 
             
-                <MissaoDiariaComponente/>
 
         </div>
         </>

@@ -6,4 +6,8 @@ export default class ProblemaService extends HttpRequest{
         return this.post('/executeCode', dados)
     }
 
+    async enviarMissaoDiaria(dados) {
+        return this.post('/enviarMissaoDiaria' , dados)
+    }
+
 }

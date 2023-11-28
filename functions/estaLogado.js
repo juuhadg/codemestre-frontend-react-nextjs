@@ -12,9 +12,10 @@ export default function estaLogado() {
              estaLogado=true
             
           } 
-          else {estaLogado=false
-            
-          
+          else {
+
+            estaLogado=false
+        
           }
 
   }

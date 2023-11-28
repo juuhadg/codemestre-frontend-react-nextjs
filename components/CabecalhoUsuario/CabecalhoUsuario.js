@@ -54,7 +54,7 @@ export default function  CabecalhoUsuario(estaLogado) {
                                 {usuario.missaoDiaria && (
                                     <div className="missaoDiariaContainer">
 
-                                        <button>
+                                        <button onClick={()=> router.push('/missaoDiaria')}>
                                         <Image src={missaoDiariaIcon}/>
                                         Missao Diaria Disponível!</button>
 

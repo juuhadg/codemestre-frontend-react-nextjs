@@ -9,6 +9,7 @@ import imgLoad from '../../public/loader.gif';
 import missaoDiariaIcon from '@/public/diariaIcon.svg';
 import fogo from '@/public/fogo.svg';
 import fogoCinza from '@/public/fogoCinza.svg';
+import { useReload } from "@/context/reloadContext";
 export default function  CabecalhoUsuario(estaLogado) {
     const router = useRouter()
     const usuarioService = new UsuarioService();
@@ -17,23 +18,34 @@ export default function  CabecalhoUsuario(estaLogado) {
     const [mostrarDescricao,setMostrarDescricao] = useState(false)
   
           
-        useEffect( () => {
-            async function getUsuario() {
-                if(estaLogado.estaLogado.estaLogado === true) {
-                    setIsLoading(true)
-                    const usuarioData = await usuarioService.obterUsuario();
-                    const user = usuarioData.data
-                    setIsLoading(false)
-                    setUsuario(user)
-                }
-           
-            
-    }
+    async function getUsuario() {
+        if(estaLogado.estaLogado.estaLogado === true) {
+            setIsLoading(true)
+            const usuarioData = await usuarioService.obterUsuario();
+            const user = usuarioData.data
+            setIsLoading(false)
+            setUsuario(user)
+        }
+   
+    
+}
+        useEffect( () => {  
                 
                     getUsuario();
                     
                 
         }, []); 
+
+
+        const { reload } = useReload();
+
+        useEffect(() => {
+            
+            if (reload) {
+              getUsuario()
+            }
+          }, [reload]);
+    
         
        
         console.log(usuario)

@@ -8,7 +8,8 @@ import UsuarioService from '@/services/UsuarioService';
 import ProblemaJaConcluido from '../problemaJaConcluido/ProblemaJaConcluido';
 import Image from 'next/image';
 import loadingGif from '@/public/loader.gif';
-
+import { useReload } from '@/context/reloadContext';
+import { useRouter } from 'next/router';
 
 
 const InputCodigo = ({
@@ -18,8 +19,6 @@ const InputCodigo = ({
   TituloProblema,
   respostaEsperada,
   missaoDiaria,
-  
-
   
 }) => {
   
@@ -32,7 +31,8 @@ const InputCodigo = ({
   var usuarioLogado = estaLogado()
   const problemaService = new ProblemaService();
   const usuarioService = new UsuarioService();
-
+  const { triggerReload } = useReload();
+  const router = useRouter()
   useEffect(()=>{
     async function ObterInfo () {
       try {
@@ -52,7 +52,7 @@ const InputCodigo = ({
  
   },[])
 
-  console.log(usuario)
+ 
   function handleEditorChange(value, event) {
     setCode(value)
   }
@@ -87,16 +87,25 @@ const InputCodigo = ({
      else {
         try {
            setLoading(true)
-            await problemaService.enviarMissaoDiaria({
+           var res = await problemaService.enviarMissaoDiaria({
               linguagemUsada:linguagem,
               codigo:codigoConvertido
             });
+            console.log(res.data)
             setLoading(false)
-            alert('Missao Concluida com Sucesso !')
+            if(res.data.status === 'sucesso') {
+               alert('Missao Concluida com Sucesso !') 
+              triggerReload()
+              router.push('/')
+            } 
+            else {
+              alert(res.data.resposta)
+            }
             
-            return ( <>
-              <dialog>Parabens!</dialog>
-            </>)
+           
+           
+          
+            
             
         } catch(error) {
             alert(error);

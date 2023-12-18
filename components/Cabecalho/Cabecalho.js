@@ -3,9 +3,16 @@ import logo from '../../public/CodeMestreLogo.png';
 import CabecalhoUsuario from "../CabecalhoUsuario/CabecalhoUsuario";
 import CabecalhoNav from "../CabecalhoNav/Cabecalhonav";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
+
+
 export default function Cabecalho(estaLogado) {
     
     const router =useRouter();
+   
+
+
+
 
     return (
         <>

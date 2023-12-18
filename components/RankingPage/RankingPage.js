@@ -8,7 +8,7 @@ export default function RankingPage() {
     const usuarioService = new UsuarioService();
     const [ranking , setRanking] = useState([]);
     const [loading, setLoading] = useState(true)
-    const [nomeUsuario, setNomeUsuario] = useState(true)
+    const [nomeUsuario, setNomeUsuario] = useState('')
 
   
 

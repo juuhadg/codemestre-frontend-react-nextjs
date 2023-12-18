@@ -4,6 +4,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { GoogleOAuthProvider } from "@react-oauth/google"
 import UsuarioService from '@/services/UsuarioService'
+import { ReloadProvider } from '@/context/reloadContext'
 
 
 const  GOOGLE_CLIENT_ID  = '665992785702-vkr3gn3vinvj1rhhloddlf7ivj4nkek9.apps.googleusercontent.com'
@@ -32,6 +33,7 @@ var estaLogado = false
 
   return ( 
     <>
+    <ReloadProvider>
     <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
     <Head>
     <title>CodeMestre</title>
@@ -39,5 +41,6 @@ var estaLogado = false
      {(router.asPath != '/login' && router.asPath != '/cadastro' && router.asPath !='/esqueciASenha') && (<Cabecalho estaLogado ={estaLogado}/>)}
   <Component {...pageProps} estaLogado={estaLogado}/>
   </GoogleOAuthProvider>
+  </ReloadProvider>
   </>
 )}

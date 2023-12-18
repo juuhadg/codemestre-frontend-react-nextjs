@@ -13,7 +13,7 @@ export default function MissaoDiariaComponente() {
     const [dadosUsuario,setDadosUsuario] = useState({});
     const [loading, setLoading] = useState(true)
     const [linguagemEscolhida,setLinguagemEscolhida] = useState('javascript')
-    const [codigoInicial,setCodigoInicial] = useState(obterFuncaoDesafio(linguagemEscolhida))
+    const [codigoInicial,setCodigoInicial] = useState('')
     const usuarioService = new UsuarioService();
 
     const router = useRouter();
@@ -25,6 +25,7 @@ export default function MissaoDiariaComponente() {
                     const usuarioData = await usuarioService.obterUsuario()
                     setDadosUsuario(usuarioData.data)
                     setLoading(false)
+                    setCodigoInicial(obterFuncaoDesafio('javascript', dadosUsuario.missaoDiaria.nomeDaFuncao))
                     
                     
                 } catch(error) {
@@ -33,7 +34,7 @@ export default function MissaoDiariaComponente() {
                 }
             }
             obterUsuario();
-    },[])
+        },[])
 
         function onLinguagemEscolhidaChange(e) {
             setLinguagemEscolhida(e.target.value.toLowerCase())

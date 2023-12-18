@@ -17,11 +17,14 @@ const InputCodigo = ({
   descricaoProblema,
   TituloProblema,
   respostaEsperada,
-  missaoDiaria
+  missaoDiaria,
   
+
   
 }) => {
   
+  
+
 
   const [code, setCode] = useState(codigoInicial);
   const [usuario, setUsuario] = useState({});
@@ -54,9 +57,12 @@ const InputCodigo = ({
     setCode(value)
   }
 
+
+
+
  
  async function aoEnviar() {
-  console.log("ENVIUANDOP")
+    setLoading(true)
     const codigoConvertido = converterParaBase64(code);
    
     if(!missaoDiaria) {
@@ -68,21 +74,31 @@ const InputCodigo = ({
           problema: TituloProblema,
           respostaEsperada: respostaEsperada
         })
-        alert("SUCESSO!")
-  
+        alert("Problema Resolvido com Sucesso !");
+        setLoading(false)  
+        return ( <>
+          <dialog>Parabens!</dialog>
+        </>)
       }catch(error) {
         console.log(error)
+        setLoading(false)
       }
     }
      else {
         try {
+           setLoading(true)
             await problemaService.enviarMissaoDiaria({
               linguagemUsada:linguagem,
               codigo:codigoConvertido
             });
+            setLoading(false)
+            return ( <>
+              <dialog>Parabens!</dialog>
+            </>)
             
         } catch(error) {
             alert(error.response.data);
+            setLoading(false)
         }
      }
 
@@ -91,7 +107,7 @@ const InputCodigo = ({
     
   }
 
-
+ 
 
   const editorStyle = {
     borderRadius: '15px'
@@ -142,3 +158,4 @@ const InputCodigo = ({
 };
 
 export default InputCodigo;
+

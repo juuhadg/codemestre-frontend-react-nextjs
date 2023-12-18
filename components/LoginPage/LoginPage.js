@@ -1,6 +1,5 @@
 import { useState,useEffect } from "react";
 import { GoogleLogin } from '@react-oauth/google';
-import jwtDecode from "jwt-decode";
 import LoginForm from "./LoginForm";
 import { useRouter } from 'next/router'
 import UsuarioService from "@/services/UsuarioService";
@@ -35,6 +34,7 @@ export default function LoginPage() {
         <div className="loginContainer">
            
                 <LoginForm/>
+
          <h2>Entrar com Google</h2>
          <div className="botaoGoogle">
          <GoogleLogin

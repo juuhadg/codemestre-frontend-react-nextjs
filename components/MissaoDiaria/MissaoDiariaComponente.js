@@ -1,10 +1,11 @@
 import UsuarioService from "@/services/UsuarioService";
-import { useState,useEffect } from "react";
+import {React, useState,useEffect } from "react";
 import loadImg from '@/public/loader.gif';
 import Image from "next/image";
 import InputCodigo from "../InputCodigo/InputCodigo";
 import imgDiaria from '@/public/diariaIcon.svg';
 import Router, { useRouter } from "next/router";
+import obterFuncaoDesafio from "@/functions/obterFuncaoDesafio";
 
 
 export default function MissaoDiariaComponente() {
@@ -12,6 +13,7 @@ export default function MissaoDiariaComponente() {
     const [dadosUsuario,setDadosUsuario] = useState({});
     const [loading, setLoading] = useState(true)
     const [linguagemEscolhida,setLinguagemEscolhida] = useState('javascript')
+    const [codigoInicial,setCodigoInicial] = useState(obterFuncaoDesafio(linguagemEscolhida))
     const usuarioService = new UsuarioService();
 
     const router = useRouter();
@@ -32,7 +34,17 @@ export default function MissaoDiariaComponente() {
             }
             obterUsuario();
     },[])
-        console.log(linguagemEscolhida)
+
+        function onLinguagemEscolhidaChange(e) {
+            setLinguagemEscolhida(e.target.value.toLowerCase())
+            setCodigoInicial(obterFuncaoDesafio(linguagemEscolhida,dadosUsuario.missaoDiaria.nomeDaFuncao))
+           
+        }
+
+
+       
+
+        
         return (
             <div className="missaoDiaria">
 
@@ -57,16 +69,17 @@ export default function MissaoDiariaComponente() {
                     <p>{dadosUsuario.missaoDiaria.descricao}</p>
 
                     <div className="test">
-                        <select className="escolherLinguagem" onChange={(e)=>setLinguagemEscolhida(e.target.value.toLowerCase())}>
+                        <select className="escolherLinguagem" onChange={onLinguagemEscolhidaChange}>
                             
                             <option value="Javascript" className="opcaoLinguagem">Javascript</option>
                             <option value="CSharp" className="opcaoLinguagem">CSharp</option>
                             <option value="Python" className="opcaoLinguagem">Python</option>
                     </select></div>
-                    <button onClick={()=>console.log(linguagemEscolhida)}>AAAAA</button>
                     <InputCodigo
                         linguagem={linguagemEscolhida}
                         missaoDiaria={true}
+                        codigoInicial={codigoInicial}
+                        
                     />
                             </>
                         )

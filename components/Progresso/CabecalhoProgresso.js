@@ -24,8 +24,8 @@ export default function CabecalhoProgresso ({usuario}) {
 
             <div className="textos">
             <section>
-            <p>Diaria</p>
-            <strong>X</strong>
+            <p>Missao Diaria</p>
+            <strong>{usuario.missaoDiaria != null ? 'Disponivel' : 'Completa ✓'}</strong>
             </section>
 
             <section>

@@ -80,7 +80,7 @@ const InputCodigo = ({
           <dialog>Parabens!</dialog>
         </>)
       }catch(error) {
-        console.log(error)
+        alert(error)
         setLoading(false)
       }
     }
@@ -92,12 +92,14 @@ const InputCodigo = ({
               codigo:codigoConvertido
             });
             setLoading(false)
+            alert('Missao Concluida com Sucesso !')
+            
             return ( <>
               <dialog>Parabens!</dialog>
             </>)
             
         } catch(error) {
-            alert(error.response.data);
+            alert(error);
             setLoading(false)
         }
      }

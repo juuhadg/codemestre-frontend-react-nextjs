@@ -13,7 +13,7 @@ export default function MissaoDiariaComponente() {
     const [dadosUsuario,setDadosUsuario] = useState({});
     const [loading, setLoading] = useState(true)
     const [linguagemEscolhida,setLinguagemEscolhida] = useState('javascript')
-    const [codigoInicial,setCodigoInicial] = useState('')
+    const [codigoInicial,setCodigoInicial] = useState(obterFuncaoDesafio('javascript', 'nomeDaFuncao'))
     const usuarioService = new UsuarioService();
 
     const router = useRouter();
@@ -25,7 +25,7 @@ export default function MissaoDiariaComponente() {
                     const usuarioData = await usuarioService.obterUsuario()
                     setDadosUsuario(usuarioData.data)
                     setLoading(false)
-                    setCodigoInicial(obterFuncaoDesafio('javascript', dadosUsuario.missaoDiaria.nomeDaFuncao))
+                    
                     
                     
                 } catch(error) {
@@ -34,11 +34,11 @@ export default function MissaoDiariaComponente() {
                 }
             }
             obterUsuario();
+            
         },[])
-
+        
         function onLinguagemEscolhidaChange(e) {
             setLinguagemEscolhida(e.target.value.toLowerCase())
-            setCodigoInicial(obterFuncaoDesafio(linguagemEscolhida,dadosUsuario.missaoDiaria.nomeDaFuncao))
            
         }
 
@@ -68,6 +68,9 @@ export default function MissaoDiariaComponente() {
                     <p>Aqui está sua missão diária, resolva para ganhar mais XP do que nos desafios e problemas comuns. Mantenha sua streak !</p>
                     <strong className="titulo">{dadosUsuario.missaoDiaria.nome}</strong>
                     <p>{dadosUsuario.missaoDiaria.descricao}</p>
+                    <strong>Nome da funcao que voce precisa criar : {dadosUsuario.missaoDiaria.nomeDaFuncao}</strong>
+                    <h2>Exemplos</h2>
+                    <div>{dadosUsuario.missaoDiaria.exemplos.map((exemplo, index) => <p key={index}>{exemplo}</p>)}</div>
 
                     <div className="test">
                         <select className="escolherLinguagem" onChange={onLinguagemEscolhidaChange}>

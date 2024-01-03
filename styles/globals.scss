@@ -8,6 +8,13 @@
     margin: 0;
   }
 
+  .termos {
+    color: $branco;
+    margin: 0 auto;
+    
+    
+  }
+
 @import '../components/MissaoDiaria/missaoDiariaComponente.scss';
 @import './componentImports.scss';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital@0;1&display=swap');

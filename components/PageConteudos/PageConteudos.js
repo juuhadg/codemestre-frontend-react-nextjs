@@ -34,7 +34,7 @@ export default function PageConteudos() {
                     <li> <strong>Muito Boa para Dados e Machine Learning</strong> </li>
                 </ul>
                 <section className="botao">
-                    <button onClick={()=>aoClicarLink('/python')}>Comece Aprender Pyton</button>
+                    <button onClick={()=>aoClicarLink('/python')} disabled className='desabilitado'>Em Breve !</button>
                  </section>
             </div>
             <div className="cardbox">
@@ -49,7 +49,7 @@ export default function PageConteudos() {
                     <li> <strong>Linguagem ótima para começar FullStack</strong> </li>
                 </ul>
                 <section className="botao">
-                    <button onClick={()=>aoClicarLink('/javascript')}>Comece Aprender JavaScript</button>
+                    <button onClick={()=>aoClicarLink('/javascript')} disabled className='desabilitado'>Em Breve !</button>
                  </section>
 
                 
